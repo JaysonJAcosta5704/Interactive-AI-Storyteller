@@ -1,0 +1,38 @@
+body{
+    background-image: linear-gradient(to right, #00a0f3, #13a3f1, #21a7ee, #2eaaec, #39ade9, #4fb5e9, #62bdea, #74c5ea, #93d3ed, #b0e1f2, #ceeff8, #ecfcff);
+    font-family: Georgia;
+}
+
+div {
+    padding: 10px;
+}
+
+h1 h2 h3{
+    font-weight: bold;
+}
+
+h3{
+    text-align: center;
+}
+
+
+input {
+    cursor: text;
+    text-align: center;
+    margin-left: 10px;
+    border-radius: 8px;
+    padding: 5px;
+    border: 1px solid black
+}
+
+button {
+    text-align: center;
+    padding: 10px;
+    margin-left: 190px;
+    background-color: #93d3ed;
+    border-radius: 8px;
+}
+
+footer {
+    font-size: 10px;
+}
