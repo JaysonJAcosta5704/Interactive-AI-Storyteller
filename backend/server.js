@@ -9,7 +9,7 @@ dotenv.config();
 const openai = new OpenAI({apiKey: process.env.OPENAI_API_KEY,});
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 
 app.get('/', async (req, res) => {res.status(200).send({message: 'This is a server for Interactive AI Storyteller!'})});
@@ -43,7 +43,7 @@ app.post('/', async (req, res) => {
 
 const runtimeOpts = {
   timeoutSeconds: 540,
-  memory: '2GB',
+  memory: '1GB',
 }
 
 exports.app = functions.runWith(runtimeOpts).https.onRequest(app);

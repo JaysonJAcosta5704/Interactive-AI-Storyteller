@@ -50,7 +50,7 @@ const addStoryToPage = (story) => {
 
 
 const sendAndRetrieveStory =  async (storyInfo) => {
-    const response = await fetch("http://127.0.0.1:5001/interactive-ai-storyteller/us-central1/app", {
+    const response = await fetch("https://us-central1-interactive-ai-storyteller.cloudfunctions.net/app", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -68,7 +68,6 @@ const sendAndRetrieveStory =  async (storyInfo) => {
       const parsedData = data.bot.trim();
    
       storyCount++;
-      console.log(parsedData)
       return parsedData;
     } else {
       const err = await response.text();
