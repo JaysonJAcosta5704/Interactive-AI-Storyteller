@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Interactive AI Storyteller</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./res/stylesheet.css">
+</head>
+
+<body>
+    <!--Welcome Section-->
+    <section id="Welcome">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="Welcome-text">
+                <h3>English 222x</h3>
+                <h1>Welcome to Interactive AI Storyteller</h1>
+            </div>
+        </div>
+    </section>
+    <!--Story Information-->
+    <section id="Story-Creation">
+        <div class="Story-Options">
+            <h1>Create your story</h1>
+            <form id="Story-Form">
+                <textarea id="Story-Information"
+                    placeholder="Input any information you want for your Story!"></textarea>
+                <button id="Submit">Create Story!</button>
+            </form>
+        </div>
+    </section>
+    <!--Story-->
+    <section id="Story-Container">
+        <div class="Story">
+
+            <!-- Tab links -->
+            <div class="tab">
+                <button class="tablinks" id="defaultOpen">Story 1</button>
+            </div>
+
+            <!-- Tab content -->
+            <div id="Story-1" class="tabcontent">
+                <p>Your First Story will appear here!</p>
+            </div>
+
+        </div>
+
+
+        <script src="./res/index.js"></script>
+</body>
+
+</html>
