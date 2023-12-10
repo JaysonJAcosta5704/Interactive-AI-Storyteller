@@ -3,10 +3,12 @@ const textarea = document.getElementById("Story-Information");
 const submitButton = document.getElementById("Submit");
 const firstTab = document.getElementById("defaultOpen");
 const firstStory = document.getElementById("Story-1");
+const spinner = document.getElementById("Story-Spinner");
 
               /*********Variables********/
 let storyCount = 0;
 let loadInterval;
+let spinnerShown = true;
               /********Functions*********/
 const changeStory = (event, storyName) => {
     var tabcontent = document.getElementsByClassName("tabcontent");
@@ -75,17 +77,15 @@ const sendAndRetrieveStory =  async (storyInfo) => {
     }
 };
 
-
-const loader = (element) => {
-  element.textContent = ''
-
-  loadInterval = setInterval(() => {
-      element.textContent += '.';
-      if (element.textContent === '....................') {
-          element.textContent = '';
-      }
-  }, 600);
-};
+const changeSpinnerState = () => {
+  if (!spinnerShown){
+    spinner.style.display = "block";
+    spinnerShown = true;
+  } else {
+    spinner.style.display = "none";
+    spinnerShown = false;
+  }
+}
 
 
 const handleSubmit = async (e) => {
@@ -102,10 +102,10 @@ const handleSubmit = async (e) => {
     return;
   }
 
-  loader(submitButton);
+  changeSpinnerState();
   let story = "" + await sendAndRetrieveStory(storyInfo);
-  clearInterval(loadInterval);
   addStoryToPage(story);
+  changeSpinnerState();
 
   Object.assign(submitButton, {
     textContent: "Create Story!",
@@ -120,4 +120,4 @@ firstTab.addEventListener("click", (e) => changeStory(e, firstStory.id));
 
               /*****Set default open*****/
 firstTab.click();
-
+changeSpinnerState();
